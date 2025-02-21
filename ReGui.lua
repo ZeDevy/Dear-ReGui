@@ -1030,22 +1030,6 @@ end
 function ReGui:GetVersion(): string
 	return self.Version
 end
-
-function ReGui:LoadPrefabs(): Folder?
-	local PlayerGui = self.PlayerGui
-	local Name = "ReGui-Prefabs"
-
-	--// Check script for prefabs
-	local ScriptUi = script:WaitForChild(Name, 2)
-	if ScriptUi then return ScriptUi end
-
-	--// Check PlayerGui for prefabs (Studio Debug)
-	local PlayerUI = PlayerGui:WaitForChild(Name, 2)
-	if PlayerUI then return PlayerUI end
-
-	return nil
-end
-
 function ReGui:ResolveContainerParent(): GuiObject?
 	local PlayerGui = self.PlayerGui
 	local Debug = self.Debug
